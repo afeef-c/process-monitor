@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 import logging
+from django.http import JsonResponse
 
 logger = logging.getLogger(__name__)
 
@@ -52,3 +53,21 @@ class ProcessTerminateView(APIView):
                 {"error": f"Failed to terminate process {pid}."},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+
+
+def system_summary(request):
+    """
+    Returns a summary of system resource usage.
+    """
+    try:
+        summary = {
+            "total_cpu_percent": psutil.cpu_percent(interval=1),
+            "total_memory": round(psutil.virtual_memory().total / (1024 ** 3), 2),  # in GB
+            "used_memory": round(psutil.virtual_memory().used / (1024 ** 3), 2),  # in GB
+            "free_memory": round(psutil.virtual_memory().available / (1024 ** 3), 2),  # in GB
+            "memory_percent": psutil.virtual_memory().percent,
+        }
+        return JsonResponse(summary)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)

@@ -5,6 +5,7 @@ import { fetchProcesses, terminateProcess } from "./utils/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/App.css";
+import SystemSummary from "./components/SystemSummary";
 
 const App = () => {
   const [processes, setProcesses] = useState([]);
@@ -69,6 +70,8 @@ const App = () => {
     <div className="outer-container">
       <div className="container mx-auto mt-5">
         <h1 className="text-center mb-4">System Process Monitor</h1>
+        <SystemSummary/>
+
         <SearchBar search={search} onSearchChange={setSearch} />
         <div className="d-flex justify-content-end mb-3">
           <button

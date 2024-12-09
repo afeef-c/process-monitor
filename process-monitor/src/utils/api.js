@@ -21,3 +21,13 @@ export const terminateProcess = async (pid) => {
     throw error;
   }
 };
+
+export const fetchSystemSummary = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/system-summary/`);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching system summary:", error);
+      throw error;
+    }
+  };

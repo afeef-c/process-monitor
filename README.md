@@ -8,7 +8,7 @@ A system process monitoring application built with Django and React.
 - Fetches and displays real-time process information.
 - Allows users to terminate processes.
 - Sortable and searchable process table.
-
+- Display system summary (e.g., total CPU usage, total memory usage).
 ---
 
 ## Tech Stack
@@ -23,7 +23,6 @@ A system process monitoring application built with Django and React.
 ### Prerequisites
 - Python 3.10 or higher
 - Node.js and npm
-- Redis server
 
 ### Backend Setup
 1. Clone the repository:
