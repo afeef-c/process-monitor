@@ -15,6 +15,7 @@ A system process monitoring application built with Django and React.
 - **Frontend:** React, Axios
 - **Backend:** Django,RestApi
 - **Database:** SQLite
+- **UI styling :** Boostrap5
 
 ---
 
@@ -29,3 +30,8 @@ A system process monitoring application built with Django and React.
    ```bash
    git clone https://github.com/afeef-c/process-monitor.git
    cd process-monitor
+
+
+### Demo video
+
+  https://youtu.be/sDdE-8Fl1PA
