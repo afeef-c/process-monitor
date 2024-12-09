@@ -28,5 +28,5 @@ A system process monitoring application built with Django and React.
 ### Backend Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/process-monitor.git
+   git clone https://github.com/afeef-c/process-monitor.git
    cd process-monitor
